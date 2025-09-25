@@ -19,7 +19,6 @@ const entity:Entity[] = [
       {
         type: "folder",
         name: "folder 1",
-        data: "data1",
         entities: [
           {
             type: "folder",
