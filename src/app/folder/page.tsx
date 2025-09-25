@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 
-const entity = [
+const entity:Entity[] = [
   {
     type: "folder",
     name: "folder 1",
-    data: "data1",
     entities: [
       {
         type: "folder",
@@ -52,7 +51,6 @@ type FolderEntity = {
   type: "folder";
   name: string;
   entities: Entity[];
-  data?: string; 
 };
 
 type Entity = FileEntity | FolderEntity;
@@ -116,7 +114,7 @@ const Folder = (props:Props) => {
 
 const Page = () => {
   const [entities, setEntities] = React.useState(entity);
-  return <Folder entities={entities} />;
+  return <Folder entities={entities} parentPath=""/>;
 };
 export default Page;
 
