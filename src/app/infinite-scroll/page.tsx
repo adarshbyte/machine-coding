@@ -2,9 +2,14 @@
 
 import React from "react";
 import generateItems from "./temp";
-
+type ItemType = {
+    emoji:string,
+    name:string,
+    country:string,
+    id:string
+}
 const InfiniteScroll = () => {
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState<ItemType[]>([]);
   const observerElement = React.useRef<HTMLLIElement | null>(null);
   
   React.useEffect(() => {
