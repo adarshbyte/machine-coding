@@ -42,8 +42,27 @@ const entity = [
     data: "data 5",
   },
 ];
+type FileEntity = {
+  type: "file";
+  name: string;
+  data: string;
+};
 
-const Folder = (props) => {
+type FolderEntity = {
+  type: "folder";
+  name: string;
+  entities: Entity[];
+  data?: string; 
+};
+
+type Entity = FileEntity | FolderEntity;
+
+type Props = {
+  parentPath:string,
+  entities:Entity[]
+}
+
+const Folder = (props:Props) => {
   const { entities, parentPath = "" } = props;
   const [openedFolders, setOpenedFolders] = React.useState<
     Record<string, boolean>
